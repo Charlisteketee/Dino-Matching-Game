@@ -1,0 +1,26 @@
+
+.card {
+  width: 250px;
+  height: 250px;
+  background-color: #87cefa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid #4682b4;
+  border-radius: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.card.flipped {
+  background-color: #fff; /* Change background color when flipped */
+}
+
+.card.flipped img {
+  display: block; /* Show the image when the card is flipped */
+}
