@@ -1,13 +1,14 @@
 
 .card {
-  width: 250px;
-  height: 250px;
-  background-color: #87cefa;
+  width: 190px;
+  height: 190px;
+  background-image: url('/home/labber/dinoGame/dino_game/public/images/egg.jpg');
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 2px solid #4682b4;
+  border: 1px solid black;
   border-radius: 10px;
 }
 

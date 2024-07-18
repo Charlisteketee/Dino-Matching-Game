@@ -1,18 +1,18 @@
+
+
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f8ff;
+  font-family: 'Bebas Neue', sans-serif;
+  background-image: url('/home/labber/dinoGame/dino_game/public/images/background.jpg');
+  background-size: cover;
   margin: 0;
   padding: 0;
 }
 
-header {
-  background-color: #4682b4;
-  color: white;
-  padding: 10px 0;
-  text-align: center;
-}
 
 h1 {
-  margin: 0;
-  font-size: 2em;
+  margin: 10px;
+  font-size: 5em;
+  color: black;
+  padding: 50px;
+  text-align: center;
 }

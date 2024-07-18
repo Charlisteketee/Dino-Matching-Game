@@ -1,5 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./Card";
+import '../styles/Game.css';
+
+
+const shuffleCards = (array) => {
+  // Fisher-Yates shuffle algorithm
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
 
 const Game = () => {
   const [points, setPoints] = useState(0);
@@ -10,17 +21,22 @@ const Game = () => {
     { id: 4, species: 'Brachiosaurus', flipped: false, matched: false },
     { id: 5, species: 'Brontosaurus', flipped: false, matched: false },
     { id: 6, species: 'Brontosaurus', flipped: false, matched: false },
-    { id: 7, species: 'Brachiosaurus', flipped: false, matched: false },
-    { id: 8, species: 'Brachiosaurus', flipped: false, matched: false },
-    { id: 9, species: 'Brachiosaurus', flipped: false, matched: false },
-    { id: 10, species: 'Brachiosaurus', flipped: false, matched: false },
-    { id: 11, species: 'Brachiosaurus', flipped: false, matched: false },
-    { id: 12, species: 'Brachiosaurus', flipped: false, matched: false },
+    { id: 7, species: 'Triceratops', flipped: false, matched: false },
+    { id: 8, species: 'Triceratops', flipped: false, matched: false },
+    { id: 9, species: 'Stegosaurus', flipped: false, matched: false },
+    { id: 10, species: 'Stegosaurus', flipped: false, matched: false },
+    { id: 11, species: 'Pterodactylus', flipped: false, matched: false },
+    { id: 12, species: 'Pterodactylus', flipped: false, matched: false },
 
   ])
   const [firstCard, setFirstCard] = useState(null);
   const [secondCard, setSecondCard] = useState(null);
   const [isChecking, setIsChecking] = useState(null);
+
+  // Shuffle cards only on initial render
+  useEffect(() => {
+    setCards(shuffleCards(cards.slice()));
+  }, []); // Empty dependency array ensures it runs only once on initial render
 
   const handleCardClick = (index) => {
     if (isChecking || cards[index].flipped || cards[index].matched) {
@@ -51,7 +67,7 @@ const Game = () => {
           resetCardState[index].flipped = false;
           setCards(resetCardState);
           resetCards();
-        }, 5000); // 5 seconds delay
+        }, 3000); // 5 seconds delay
       }
     }
   };
@@ -64,7 +80,8 @@ const Game = () => {
 
   return (
     <div className="game-container">
-      <div className="points">Points: {points}</div>
+      <h1>Noah's Dinosaur Matching Game</h1>
+      <div className="points">POINTS: {points}</div>
       <div className="game-board">
         {cards.map((card, index) => (
           <Card
