@@ -2,7 +2,7 @@
 
 ## Select 2 sqaures to try to match dinosaurs. If you get 2 of the same dinos, you earn a point!
 
-![Dino Home Page](/dino_game/public/images/DinoGame.png)
+![Dino Home Page](./public/images/DinoGame.png)
 
 ### Have fun!
 
